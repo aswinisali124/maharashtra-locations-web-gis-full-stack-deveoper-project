@@ -1,0 +1,448 @@
+
+/* =========================================================
+   MAHARASHTRA LOCATIONS WEB GIS
+   COMPLETE CSS
+   ========================================================= */
+
+
+/* BASIC PAGE SETUP */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+
+/* HEADER */
+
+.page-header {
+    background: #0f766e;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 16px;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+    font-size: clamp(24px, 3vw, 36px);
+}
+
+.page-header p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* MAIN DASHBOARD */
+
+.dashboard {
+    padding: 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+
+/* DASHBOARD STATISTICS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 2px 7px rgba(15, 23, 42, 0.09);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card h2 {
+    color: #64748b;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.stat-card p {
+    color: #0f766e;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* SEARCH TOOLBAR */
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 160px;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #ffffff;
+    font-size: 15px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+
+/* TOOLBAR BUTTONS */
+
+.toolbar button,
+#City {
+    padding: 12px 16px;
+    border-radius: 7px;
+    font-size: 15px;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+}
+
+#searchBtn {
+    background: #0f766e;
+    color: #ffffff;
+    border-color: #0f766e;
+}
+
+#searchBtn:hover {
+    background: #115e59;
+}
+
+.secondary-button {
+    background: #64748b;
+    color: #ffffff;
+    border-color: #64748b !important;
+}
+
+.secondary-button:hover {
+    background: #475569;
+}
+
+#City {
+    background: #ffffff;
+    color: #172033;
+    min-width: 155px;
+}
+
+
+/* MAP AND TABLE LAYOUT */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(350px, 1fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+
+/* MAP PANEL AND TABLE PANEL */
+
+.map-panel,
+.table-panel {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 7px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+
+
+/* LEAFLET MAP */
+
+#map {
+    width: 100%;
+    height: 590px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+}
+
+
+/* MAP HINT */
+
+.map-hint {
+    padding: 10px 12px;
+    color: #64748b;
+    font-size: 12px;
+    background: #ffffff;
+}
+
+
+/* TABLE PANEL */
+
+.table-panel {
+    padding: 16px;
+}
+
+
+/* TABLE HEADING */
+
+.table-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.table-heading h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #172033;
+}
+
+#resultCount {
+    color: #64748b;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* TABLE SCROLL */
+
+.table-scroll {
+    max-height: 590px;
+    overflow: auto;
+}
+
+
+/* LOCATIONS TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+th {
+    background: #0f766e;
+    color: #ffffff;
+    text-align: left;
+    padding: 12px 9px;
+}
+
+td {
+    padding: 12px 9px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #f0fdfa;
+}
+
+
+/* ZOOM BUTTON */
+
+.zoom-button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.zoom-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* EMPTY TABLE MESSAGE */
+
+.empty-state {
+    text-align: center;
+    color: #64748b;
+    padding: 24px;
+}
+
+
+/* MAP LEGEND */
+
+.legend-panel {
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 7px rgba(15, 23, 42, 0.08);
+}
+
+.legend-panel h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.legend-items span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+/* LEGEND MARKER COLORS */
+
+.legend-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.mumbai {
+    background: #dc2626;
+}
+
+.legend-dot.thane {
+    background: #2563eb;
+}
+
+.legend-dot.pune {
+    background: #7c3aed;
+}
+
+.legend-dot.nashik {
+    background: #d906d2;
+}
+
+.legend-dot.nagpur {
+    background: #16a34a;
+}
+
+
+
+/* DATA NOTE */
+
+.data-note {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 16px 2px 0;
+}
+
+
+/* LEAFLET LAYER CONTROL */
+
+.leaflet-control-layers {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+}
+
+.north-arrow{
+  background:#fff;
+  padding:6px 10px;
+  border-radius:6px;
+  font-weight:700;
+  border:1px solid #cbd5e1;
+  box-shadow:0 2px 7px rgba(0,0,0,.15);
+}
+.leaflet-control-scale-line{
+  font-size:11px;
+}
+
+/* RESPONSIVE TABLET DESIGN */
+
+@media (max-width: 1050px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #map {
+        height: 500px;
+    }
+
+    .table-scroll {
+        max-height: 420px;
+    }
+
+}
+
+
+/* RESPONSIVE MOBILE DESIGN */
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    #searchInput {
+        flex-basis: 100%;
+    }
+
+    #City {
+        flex: 1;
+    }
+
+    #map {
+        height: 420px;
+    }
+
+    .table-panel {
+        padding: 10px;
+    }
+
+    .table-heading h2 {
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 9px 6px;
+    }
+
+}
+
+
+/* =========================================================
+   END OF CSS
+   ========================================================= */

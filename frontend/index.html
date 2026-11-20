@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maharashtra Locations Web GIS</title>
+
+  <!-- Leaflet map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- Marker Cluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <!-- Project stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Maharashtra Locations Web GIS</h1>
+    <p>Interactive mapping and visualization of Maharashtra Locations</p>
+  </header>
+
+  <main class="dashboard">
+    <!-- DASHBOARD STATISTICS -->
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <h2>Total Locations</h2>
+                <p id="totalCount">0</p>
+            </article>
+
+            <article class="stat-card">
+                <h2>Mumbai</h2>
+                <p id="mumbaiCount">0</p>
+            </article>
+
+            <article class="stat-card">
+                <h2>Thane</h2>
+                <p id="thaneCount">0</p>
+            </article>
+
+            <article class="stat-card">
+                <h2>Pune</h2>
+                <p id="puneCount">0</p>
+            </article>
+
+            <article class="stat-card">
+                <h2>Nashik</h2>
+                <p id="nashikCount">0</p>
+            </article>
+
+            <article class="stat-card">
+                <h2>Nagpur</h2>
+                <p id="nagpurCount">0</p>
+            </article>
+
+            
+        </section>
+
+
+    <section class="toolbar">
+      <input type="search" id="searchInput" placeholder="Search Locations name or city..." aria-label="Search Locations name or city">
+      <button id="searchBtn" type="button">🔍 Search</button>
+      <button id="resetBtn" type="button" class="secondary-button">↺ Reset</button>
+         
+      
+      <select id="City" aria-label="Filter by City">
+        <option value="All">All Cities</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Thane">Thane</option>
+        <option value="Pune">Pune</option>
+        <option value="Nashik">Nashik</option>
+        <option value="Nagpur">Nagpur</option>
+    
+      </select>                                                                 
+    </section>
+
+    <section class="content-grid">
+      <div class="map-panel">
+        <div id="map" aria-label="Map of Maharashtra Locations"></div>
+        <div class="map-hint">Use + / − to zoom. Select a marker or a table Zoom button to locate a facility.</div>
+      </div>
+
+      <aside class="table-panel">
+        <div class="table-heading">
+          <h2>Locations Information</h2>
+          <span id="resultCount">0 results</span>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                 <th>Name</th>
+                 <th>City</th>
+                  <th>Zoom</th>
+              </tr>
+            </thead>
+            <tbody id="locationsTable">
+              <tr><td colspan="3" class="empty-state">Loading Locations…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </aside>
+    </section>
+
+   <section class="legend-panel">
+ <h2>Legend</h2>
+ <div class="legend-items">
+  <span><i class="legend-dot mumbai"></i> Mumbai</span>
+  <span><i class="legend-dot thane"></i> Thane</span>
+  <span><i class="legend-dot pune"></i> Pune</span>
+  <span><i class="legend-dot nashik"></i> Nashik</span>
+  <span><i class="legend-dot nagpur"></i> Nagpur</span>
+  
+ </div>
+</section>
+
+</main>
+
+ <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Marker Cluster JavaScript -->
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <!-- Project JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
